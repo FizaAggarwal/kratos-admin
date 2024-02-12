@@ -24,6 +24,7 @@ export default function Home({ data }: ListProps) {
             <th className="px-8 py-5">Last Name</th>
             <th className="px-8 py-5">Email</th>
             <th className="px-8 py-5">ID</th>
+            <th className="px-8 py-5">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -40,6 +41,11 @@ export default function Home({ data }: ListProps) {
               <td className="px-8 py-5">{identity.traits.name.last || "-"}</td>
               <td className="px-8 py-5">{identity.traits.email}</td>
               <td className="px-8 py-5">{identity.id}</td>
+              <td className="px-8 py-5">
+                <div className="bg-red-500 text-center rounded-lg p-2">
+                  Delete
+                </div>
+              </td>
             </tr>
           ))}
         </tbody>
