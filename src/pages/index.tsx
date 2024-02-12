@@ -19,6 +19,7 @@ export default function Home({ data }: ListProps) {
       <table className="table-auto w-full text-left whitespace-no-wrap">
         <thead>
           <tr className="text-sm font-medium text-white uppercase bg-gray-800">
+            <th className="px-8 py-5">Index</th>
             <th className="px-8 py-5">First Name</th>
             <th className="px-8 py-5">Last Name</th>
             <th className="px-8 py-5">Email</th>
@@ -26,8 +27,9 @@ export default function Home({ data }: ListProps) {
           </tr>
         </thead>
         <tbody>
-          {data.map((identity) => (
+          {data.map((identity, index) => (
             <tr key={identity.id} className="text-white bg-gray-700">
+              <td className="px-8 py-5">{index + 1}</td>
               <td className="px-8 py-5">{identity.traits.name.first || "-"}</td>
               <td className="px-8 py-5">{identity.traits.name.last || "-"}</td>
               <td className="px-8 py-5">{identity.traits.email}</td>
