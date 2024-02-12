@@ -28,7 +28,13 @@ export default function Home({ data }: ListProps) {
         </thead>
         <tbody>
           {data.map((identity, index) => (
-            <tr key={identity.id} className="text-white bg-gray-700">
+            <tr
+              key={identity.id}
+              className="text-white bg-gray-700 cursor-pointer"
+              onClick={() => {
+                window.location.href = `/identity/${identity.id}`;
+              }}
+            >
               <td className="px-8 py-5">{index + 1}</td>
               <td className="px-8 py-5">{identity.traits.name.first || "-"}</td>
               <td className="px-8 py-5">{identity.traits.name.last || "-"}</td>
